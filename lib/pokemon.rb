@@ -11,14 +11,12 @@ attr_accessor :name, :type, :id, :db
   end
 
   def self.save(pk_name, pk_type, db)
-    new_pokemon = self.new
       sql = <<-SQL
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
       SQL
       DB[:conn].execute(sql, pk_name, pk_type)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
-    end
   end
 
   def self.create(name, type)
