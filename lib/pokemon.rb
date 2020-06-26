@@ -18,7 +18,7 @@ attr_accessor :name, :type, :id, :db
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
       SQL
-      DB[:conn].execute(sql, self.name, self.type)
+      @db[:conn].execute(sql, self.name, self.type)
       @id = @db[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
       binding.pry
     end
