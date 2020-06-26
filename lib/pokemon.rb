@@ -21,8 +21,8 @@ attr_accessor :name, :type, :id, :db
 
   def self.new_from_db(row)
     id: = row[0]
-    name: = row[1]
-    type: = row[2]
+    pk_name: = row[1]
+    pk_type: = row[2]
     new_pokemon = self.new()
 
   def self.find(name)
