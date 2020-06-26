@@ -10,7 +10,7 @@ attr_accessor :name, :type, :id, :db
     @id = nil
   end
 
-  def save(pk_name, pk_type, db)
+  def self.save(pk_name, pk_type, db)
     if self.id
       self.update
     else
