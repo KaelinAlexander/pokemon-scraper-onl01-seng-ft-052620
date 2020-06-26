@@ -20,14 +20,14 @@ attr_accessor :name, :type, :id, :db
   end
 
   def self.create(name, type)
-    pk_name: = name
-    pk_type: = type
+    pk_name = name
+    pk_type = type
     new_pokemon = self.new(pk_name:, pk_type:)
     new_pokemon.save
   end
 
   def self.new_from_db(row)
-    id: = row[0]
+    id = row[0]
     pk_name = row[1]
     pk_type = row[2]
     new_pokemon = self.new(pk_name, pk_type)
