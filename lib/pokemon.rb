@@ -3,7 +3,7 @@ require_relative "../bin/environment"
 class Pokemon
 attr_accessor :name, :type, :id, :db
 
-  def initialize(pk_name:, pk_type:, id:, db:)
+  def initialize(name:, type:, id:, db:)
     @name = pk_name
     @type = pk_type
     @id = nil
