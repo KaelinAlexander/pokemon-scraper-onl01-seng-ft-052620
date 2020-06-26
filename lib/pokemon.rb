@@ -6,14 +6,6 @@ attr_accessor :name, :type, :id, :db
     @type = pk_type
   end
 
-  def self.all
-
-  end
-
-  def self.find
-
-  end
-
   def save
 
   end
@@ -21,5 +13,7 @@ attr_accessor :name, :type, :id, :db
   def update
 
   end
+
+
 
 end
