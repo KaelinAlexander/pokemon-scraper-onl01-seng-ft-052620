@@ -12,7 +12,7 @@ attr_accessor :name, :type, :id, :db
     else
       sql = <<-SQL
 
-      
+
   end
 
   def self.find
