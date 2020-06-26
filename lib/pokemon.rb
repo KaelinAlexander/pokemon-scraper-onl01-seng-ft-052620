@@ -50,4 +50,4 @@ attr_accessor :name, :type, :id, :db
     DB[:conn].execute(sql, self.name, self.type, self.id)
   end
 
-end_
+end
