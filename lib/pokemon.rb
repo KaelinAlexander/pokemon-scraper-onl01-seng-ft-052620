@@ -16,7 +16,7 @@ attr_accessor :name, :type, :id, :db
       VALUES (?, ?)
       SQL
       db.execute(sql, pk_name, pk_type)
-      @id = db[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+      @id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
       binding.pry
   end
 
