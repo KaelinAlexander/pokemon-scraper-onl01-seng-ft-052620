@@ -4,8 +4,8 @@ class Pokemon
 attr_accessor :name, :type, :id, :db
 
   def initialize(name:, type:, id:, db:)
-    @name = pk_name
-    @type = pk_type
+    @name = name
+    @type = type
     @id = nil
   end
 
