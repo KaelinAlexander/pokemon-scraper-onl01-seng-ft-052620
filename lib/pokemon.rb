@@ -11,9 +11,7 @@ attr_accessor :name, :type, :id, :db
   end
 
   def self.save(pk_name, pk_type, db)
-    if self.id
-      self.update
-    else
+    new_pokemon = self.new
       sql = <<-SQL
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
