@@ -15,8 +15,8 @@ attr_accessor :name, :type, :id, :db
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
       SQL
-      @db[:conn].execute(sql, pk_name, pk_type)
-      @id = @db[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+      db[:conn].execute(sql, pk_name, pk_type)
+      @id = db[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
 
   def self.create(name, type)
@@ -41,13 +41,13 @@ attr_accessor :name, :type, :id, :db
     WHERE name = ?
     LIMIT 1
     SQL
-    row = @db[:conn].execute(sql, name)[0]
+    row = db[:conn].execute(sql, name)[0]
       self.new_from_db(row)
   end
 
   def update
     sql = "UPDATE pokemon SET name = ?, type = ? WHERE id = ?"
-    @db[:conn].execute(sql, self.name, self.type, self.id)
+    db[:conn].execute(sql, self.name, self.type, self.id)
   end
 
 end
