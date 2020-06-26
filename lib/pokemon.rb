@@ -22,7 +22,7 @@ attr_accessor :name, :type, :id, :db
   def self.create(name, type)
     pk_name = name
     pk_type = type
-    new_pokemon = self.new(pk_name:, pk_type:)
+    new_pokemon = self.new(pk_name, pk_type)
     new_pokemon.save
   end
 
