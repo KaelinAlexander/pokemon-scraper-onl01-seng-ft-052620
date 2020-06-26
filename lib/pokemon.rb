@@ -10,10 +10,12 @@ attr_accessor :name, :type, :id, :db
 
   end
 
-  def update
+  def self.find
 
   end
 
+  def update
 
+  end
 
 end
