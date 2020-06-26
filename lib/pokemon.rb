@@ -1,4 +1,5 @@
 require_relative "../bin/environment"
+require 'pry'
 
 class Pokemon
 attr_accessor :name, :type, :id, :db
