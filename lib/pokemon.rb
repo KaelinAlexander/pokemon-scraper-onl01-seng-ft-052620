@@ -26,7 +26,8 @@ attr_accessor :name, :type, :id, :db
   end
 
   def update
-
+    sql = "UPDATE pokemon SET name = ?, type = ? WHERE id = ?"
+    DB[:conn].execute(sql, self.name, self.type, self.id)
   end
 
 end
