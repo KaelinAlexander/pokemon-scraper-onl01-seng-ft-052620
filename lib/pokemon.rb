@@ -1,4 +1,4 @@
-require_relative "../bin/environment.rb"
+require_relative "../bin/environment"
 
 class Pokemon
 attr_accessor :name, :type, :id, :db
