@@ -7,7 +7,12 @@ attr_accessor :name, :type, :id, :db
   end
 
   def save
+    if self.id
+      self.update
+    else
+      sql = <<-SQL
 
+      
   end
 
   def self.find
