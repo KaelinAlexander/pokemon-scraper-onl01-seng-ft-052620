@@ -23,6 +23,8 @@ attr_accessor :name, :type, :id, :db
     pk_name: = name
     pk_type: = type
     new_pokemon = self.new(pk_name:, pk_type:)
+    new_pokemon.save
+  end
 
   def self.new_from_db(row)
     id: = row[0]
