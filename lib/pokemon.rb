@@ -19,10 +19,21 @@ attr_accessor :name, :type, :id, :db
     end
   end
 
-  end
+  def self.new_from_db(row)
+    id: = row[0]
+    name: = row[1]
+    type: = row[2]
+    new_pokemon = self.new()
 
   def self.find(name)
-
+    sql = <<-SQL
+    SELECT *
+    FROM pokemon
+    WHERE name = ?
+    LIMIT 1
+    SQL
+    row = DB[:conn].execute(sql, name)[0]
+      self.new_from_db(row)
   end
 
   def update
